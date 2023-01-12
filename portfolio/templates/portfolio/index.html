@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio v 1.1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'portfolio/styles.css' %}">
+    <!-- Stencil font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light myNavbar">
+            <a class="navbar-brand myLogo" href="#home"><img src="{% static 'portfolio/assets/logo_lightlander.svg' %}" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+      </header>
+
+      <main>
+        <!-- JUMBOTRON -->
+        <div class="jumbotron myJumbotron" id="home">
+            <h1 class="display-4">HELLO, WORLD!</h1>
+        </div>
+        
+
+        <!-- ABOUT -->
+        <section class="about-section text-center bg-dark" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">About Me</h2>
+                        <img loading="lazy" class="img-fluid profile-picture" src="{% static 'portfolio/assets/avatar.png' %}" alt="Profile picture" />
+                        <p class="text-white-50">My name is Michal. I was born in North-East Czech Republic in 1981. I currently live with my wife and children in probably the most beautiful part of England - somewhere on the border between Kent and East Sussex.</p>
+                        <p class="text-white-50">I’m interested in software development and computational problem solving. I’m working hard to make a transition into tech and the purpose of this website is to help me in my endeavour.</p>
+                        
+                        <h5 class="text-white-50" style="margin-top: 50px;">SKILLS:</h5>
+                        <div class="text-white-50 skills">
+                                <div class="skill">HTML</div>
+                                <div class="skill">CSS</div>
+                                <div class="skill">JavaScript</div>
+                                <div class="skill">Node JS</div>
+                                <div class="skill">jQuery</div>
+                                <div class="skill">React</div>
+                                <div class="skill">Python</div>
+                                <div class="skill">Flask</div>
+                                <div class="skill">Django</div>
+                                <div class="skill">SQL</div>
+                                <div class="skill">Git</div>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects-->
+        <section class="projects-section" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static 'portfolio/assets/projs.jpeg' %}" alt="collage of mini projects" /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>My Work</h4>
+                            <p class="text-black-50 mb-0">Below, you will find a selection of projects that showcase my skills and interests in software development. Whether it's my first attempt with hangman made in Flask or a little website for a fictitious product, I am constantly striving to learn and create meaningful work that makes an impact.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6 img-click"><a href="https://michalous.github.io/equinox-countdown/"><img class="img-fluid" src="{% static 'portfolio/assets/countdown.jpeg' %}" alt="screenshot of countdown clock" /></a></div>
+                    <div class="col-lg-6">
+                        <div class="text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Equinox countdown</h4>
+                                    <p class="mb-0 text-white-50">Nice little project to show a countdown until next equinox. The biggest challenge here for me was to figure out how to display digits in the grid.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6 img-click"><a href="https://michalous.github.io/covid-graph/"><img class="img-fluid" src="{% static 'portfolio/assets/covid-graph.jpeg' %}" alt="bar chart of covid cases in UK" /></a></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Covid cases graph</h4>
+                                    <p class="mb-0 text-white-50">This project pulls the data from the UK Government website and displays it as a bar chart using Plotly JS. To smooth out the spikes in the data I've calculated 7 day averages and displayed them alongside the actual data.</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Three Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6 img-click"><a href="https://michalous.github.io/mastermind/"><img class="img-fluid" src="{% static 'portfolio/assets/mastermind.jpeg' %}" alt="screenshot of mastermind game" /></a></div>
+                    <div class="col-lg-6">
+                        <div class="text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Mastermind</h4>
+                                    <p class="mb-0 text-white-50">I got an idea for this game while watching an introductory lesson to CS50AI where it is mentioned. It's something I used to play as a little kid. Maybe the next step for me would be to write an algorithm for computer to win any game - it should be possible in 5 or fewer turns.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Four Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6 img-click"><a href="https://michalous.github.io/challenge-2/"><img class="img-fluid" src="{% static 'portfolio/assets/portfolio1.jpeg' %}" alt="screenshot of my previous portfolio" /></a></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Porfolio website version 1.0</h4>
+                                    <p class="mb-0 text-white-50">My first attempt to build portfolio website. Since it's been built not that long ago it's very similar to this one. Here you will find links to my other little projects.</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Five Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6 img-click"><a href="https://michalous.github.io/math-random/"><img class="img-fluid" src="{% static 'portfolio/assets/random.png' %}" alt="sine graph" /></a></div>
+                    <div class="col-lg-6">
+                        <div class="text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Playing with Math.random()</h4>
+                                    <p class="mb-0 text-white-50">It's very satisfying to watch computer compute stuff. Here are four little projects built with Math.random(). They are Monte Carlo integration, probabilities of rolling 2 dice, the birthday problem and shuffling the deck of cards.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section class="contact" id="contact">
+            <h2>Contact Me!</h2>
+        <form class="myForm">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <textarea name="" id="" cols="32" rows="10" placeholder="Your query:"></textarea>
+              <!-- <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1"> -->
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check to receive updates</label>
+            </div>
+            <button disabled type="submit" class="btn btn-primary">Submit</button>
+            <br>
+            <br>
+            <span>Or drop me an email to: chronosonuk@gmail.com</span>
+          </form>
+        </section>
+      </main>
+      <footer>
+        <img class="footer_logo" src="{% static 'portfolio/assets/logo_lightlander_white.png' %}" alt="logo">
+        <div class="rights">
+          <p>Copyright &copy; Michal Skalsky 2023</p>
+        </div>
+      </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous">
+    </script>
+    <script src="{% static 'portfolio/script.js' %}"></script>
+</body>
+</html>

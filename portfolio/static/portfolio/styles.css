@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap');
+
+body {
+    background-color: #57f8e1;
+}
+
+/* header  */
+
+.myNavbar {
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #57f8e1 !important;
+    padding: 10px 30px;
+    z-index: 3;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.myLogo {
+    height: 100px;
+}
+
+.myLogo img {
+    height: 100%;
+}
+
+.myJumbotron {
+    position: relative;
+    background: url('./assets/jumbotron.JPG');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Stardos Stencil', cursive !important;
+    color: #57f8e1;
+}
+
+.myJumbotron h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* about */
+
+.profile-picture {
+    width: 200px;
+    border-radius: 50%;
+    border: 3px solid rgb(200, 200, 200);
+    margin-bottom: 30px;
+}
+
+#about {
+    margin-top: -40px;
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(140, 140, 140);
+    font-size: 18px;
+    color: #57f8e1;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+    cursor: default;
+}
+
+/* projects */
+
+.projects-section {
+    margin-top: 50px;
+}
+
+.project {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+.img-click:hover, .nav-item:hover, .myLogo img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.3s;
+}
+
+.text-white, .text-white-50 {
+    text-align: center;
+}
+
+/* contact */
+.contact {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.myForm {
+    padding: 25px;
+    width: 350px;
+    margin: 40px auto;
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* footer */
+  
+footer {
+    width: 100%;
+    background-color: black;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.footer_logo {
+    margin: 50px;
+    width: 200px;
+}
+  
+.rights p {
+    color: grey;
+    margin-top: -35px;
+}
