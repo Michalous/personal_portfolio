@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from . import TOP_SECRET
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,3 +123,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = TOP_SECRET.EMAIL_BACKEND
+EMAIL_HOST = TOP_SECRET.EMAIL_HOST
+EMAIL_HOST_USER = TOP_SECRET.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = TOP_SECRET.EMAIL_HOST_PASSWORD
+EMAIL_PORT = TOP_SECRET.EMAIL_PORT
+EMAIL_USE_TLS = TOP_SECRET.EMAIL_USE_TLS
+EMAIL_USE_SSL = TOP_SECRET.EMAIL_USE_SSL
