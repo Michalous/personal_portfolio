@@ -28,7 +28,7 @@ SECRET_KEY = TOP_SECRET.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['chronoson.co.uk']
+ALLOWED_HOSTS = ['chronoson.co.uk', 'www.chronoson.co.uk']
 
 
 # Application definition
