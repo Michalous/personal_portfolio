@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.mail import send_mail
+from django.core.files.storage import default_storage
 from . import EMAILS
+import random
 
 # Create your views here.
 def index(request):
@@ -19,3 +21,13 @@ def index(request):
         return render(request, "portfolio/index.html", {"message" : message})
 
     return render(request, "portfolio/index.html")
+
+def hangman(request):
+    handle = default_storage.open("words.txt", 'r')
+    words = handle.read()
+    words = words.split(" ")
+    word = words[random.randint(0, len(words) - 1)]
+
+    return render(request, "portfolio/hangman.html", {
+        'word': word
+    })

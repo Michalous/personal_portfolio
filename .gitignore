@@ -9,7 +9,10 @@ db.sqlite3
 db.sqlite3-journal
 media
 personal_portfolio/TOP_SECRET.py
+personal_portfolio/settings.py
 portfolio/EMAILS.py
+settings.py
+
 
 # If your build process includes running collectstatic, then you probably 
 don't need or want to include staticfiles/
