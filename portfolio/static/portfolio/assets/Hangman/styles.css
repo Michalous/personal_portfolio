@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+
+#container {
+    border: 1px dotted navy;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#letters {
+    max-width: 370px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#success {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 210px;
+    height: 355px;
+    background-color: blue;
+    border-radius: 10px;
+    opacity: 0.6;
+    z-index: 3;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    margin: 4px;
+    background-color: aliceblue;
+    color: navy;
+    font-size: 20px;
+}
+
+.letter:hover {
+    transform: scale(1.2);
+    transition-duration: 0.3s;
+    background-color: beige;
+    cursor: pointer;
+}
+
+#dashedWord {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter_dash {
+    width: 20px;
+    margin: 5px;
+    font-size: 24px;
+}
+
+#score, h1 {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px;
+    color: navy;
+}
