@@ -6,7 +6,7 @@ body {
     background-color: lightblue;
 }
 
-#secret_word {
+#secret_word, #secret_score {
     display: none;
 }
 
@@ -80,7 +80,7 @@ body {
     color: navy;
 }
 
-.container {
+.container, .container_win {
     width: 220px;
     height: 420px;
     border: 1px dotted navy;
@@ -90,7 +90,7 @@ body {
     color: navy;
 }
 
-button {
+button, #play_again_win {
     height: 50px;
     width: 160px;
     border: none;
@@ -101,7 +101,7 @@ button {
     font-size: 25px;
 }
 
-button:hover {
+button:hover, play_again_win:hover {
     transform: scale(1.05);
     opacity: 0.9;
     transition-duration: 0.7s;

@@ -13,12 +13,14 @@
 </head>
 <body>
 	<h1 id="secret_word">{{ word }}</h1>
+    <h1 id="secret_score">{{ score }}</h1>
     <h1>HANGMAN</h1>
     <div id="container">
-        <div id="score">Your score: <span id="yourScore">0</span></div>
+        <div id="score">Your score: <span id="yourScore">{{ score }}</span></div>
         <canvas id="hangman" width="180" height="250"></canvas>
         <div id="success"></div>
     </div>
+
     <div class="container">
         <h1>You've been hanged!</h1>
         <br>
@@ -29,6 +31,14 @@
         <h2><span id="display_word"></span></h2>
     </div>
     <button id="play_again_btn">Play again</button>
+
+    <div class="container_win">
+        <h1>Great Job!</h1>
+        <br>
+        <h2>Your score: <span id="display_score_win"></span></h2>
+        <br>
+    </div>
+    <button id="play_again_win">Continue</button>
 
     <div id="dashedWord"></div>
     <script src="{% static 'portfolio/assets/Hangman/script.js' %}"></script>

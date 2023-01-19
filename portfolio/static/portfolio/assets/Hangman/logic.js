@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var remaining_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     var wrong_guesses = 0
-    var score = 0
+    var score = +$('#secret_score').text()
     var word_to_guess = $('#secret_word').text()
     
     
@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     $(document).ready(function() {
         $('.container').hide()
         $('#play_again_btn').hide()
+        $('.container_win').hide()
+        $('#play_again_win').hide()
+        
         writeLetters()
         writeDashedWord(dashWordToGuess(word_to_guess))
         // click on first letter
@@ -38,11 +41,11 @@ document.addEventListener('DOMContentLoaded', function() {
         remaining_letters.splice(index, 1)
         if (word_to_guess.indexOf(clickedLetter) == - 1) {
             wrong_guesses++
-        isGameOver()
         }
         $('#letters').empty()
         writeLetters()
         drawHangman()
+        isGameOver()
         writeDashedWord(dashWordToGuess(word_to_guess))
         $('.letter').click(clickOnLetter)
         console.log(score)
@@ -92,11 +95,43 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#display_word').text(word_to_guess)
             $('#display_score').text(score)
             $('#play_again_btn').click(function() {
+                fetch('/hangman', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        score: 0
+                    }),
+                    headers: { "X-CSRFToken": csrftoken }
+                })
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    location.reload()
+                    
+                })
                 location.reload()
             })
         }
         if (dashWordToGuess(word_to_guess).indexOf('-') == -1) {
-            return 'won'
+            $('#container').hide()
+            $('.container_win').show()
+            $('#play_again_win').show()
+            $('#letters').hide()
+            $('#display_score_win').text(score)
+            $('#play_again_win').click(function() {
+                fetch('/hangman', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        score: score
+                    }),
+                    headers: { "X-CSRFToken": csrftoken }
+                })
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    location.reload()
+                    
+                })
+            })
         }
     }
 })
