@@ -7,11 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     $(document).ready(function() {
+        $('.container').hide()
+        $('#play_again_btn').hide()
         writeLetters()
         writeDashedWord(dashWordToGuess(word_to_guess))
         // click on first letter
         $('.letter').click(clickOnLetter)
         
+        // gets data about word from dicionary
         $.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word_to_guess}`, function(data, status){
             console.log(data)
         });
@@ -35,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         remaining_letters.splice(index, 1)
         if (word_to_guess.indexOf(clickedLetter) == - 1) {
             wrong_guesses++
+        isGameOver()
         }
         $('#letters').empty()
         writeLetters()
@@ -76,6 +80,23 @@ document.addEventListener('DOMContentLoaded', function() {
             if (letter == word_to_guess[i]) {
                 score += SCRABBLE_LETTER_VALUES[letter]
             }
+        }
+    }
+
+    function isGameOver() {
+        if (wrong_guesses >= 8) {
+            $('#container').hide()
+            $('.container').show()
+            $('#play_again_btn').show()
+            $('#letters').hide()
+            $('#display_word').text(word_to_guess)
+            $('#display_score').text(score)
+            $('#play_again_btn').click(function() {
+                location.reload()
+            })
+        }
+        if (dashWordToGuess(word_to_guess).indexOf('-') == -1) {
+            return 'won'
         }
     }
 })
