@@ -16,13 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         writeDashedWord(dashWordToGuess(word_to_guess))
         // click on first letter
         $('.letter').click(clickOnLetter)
-        
-        // gets data about word from dicionary
-        $.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word_to_guess}`, function(data, status){
-            console.log(data)
-        });
-        
-
     })
 
     function writeLetters() {
