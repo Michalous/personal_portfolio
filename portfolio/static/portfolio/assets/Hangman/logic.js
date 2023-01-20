@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function main() {
         $(document).ready(function() {
         $('#letters').empty()
+        $('#save_name').hide()
         $('.container').hide()
         $('#play_again_btn').hide()
         $('.container_win').hide()
@@ -106,8 +107,27 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#letters').hide()
             $('#display_word').text(word_to_guess)
             $('#display_score').text(score)
+            
+            fetch('/hangman-endpoint', {
+                method: 'POST',
+                body: JSON.stringify({
+                    word: false,
+                    score: score
+                }),
+                headers: {"X-CSRFToken": csrftoken}
+              })
+              .then(response => response.json())
+              .then(result => {
+                  // Print result
+                  console.log(result);
+                  if (result['high-scores'] == 'yes') {
+                    $('#save_name').show()
+                  }
+              });
+
             $('#play_again_btn').click(function() {
                 location.reload()
+                
             })
         }
         if (dashWordToGuess(word_to_guess).indexOf('-') == -1) {

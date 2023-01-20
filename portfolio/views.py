@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
 from django.core.files.storage import default_storage
+#from django.db.models import Max
 from . import EMAILS
 from .models import HangmanScores
 import json
@@ -28,9 +29,14 @@ def index(request):
 def hangman(request):
     return render(request, "portfolio/hangman.html")
 
+def get_top_scores():
+    top_scores = HangmanScores.objects.all().order_by('-score')[:5]
+    return top_scores
+
 def hangman_endpoint(request):
     if request.method == "POST":
         data = json.loads(request.body)
+        print(data)
         if data['word']:
             handle = default_storage.open("words.txt", 'r')
             words = handle.read()
@@ -39,15 +45,23 @@ def hangman_endpoint(request):
             return JsonResponse({
                 "word": word
             })
+        else:
+            top_scores = get_top_scores()
+            low = top_scores[4]
+            if data['score'] > low.score:
+                return JsonResponse({
+                    "high-scores": "yes"
+                })
+            else:
+                return JsonResponse({
+                    "high-scores": "no"
+                })
     return JsonResponse({
         'hello': 'world!'
     })
 
+
 def hangman_leaderboard(request):
-    names = HangmanScores.objects.all()
-    for name in names:
-        print(name)
-    print(names)
     return render(request, "portfolio/hangman-leaderboard.html", {
-        'names': HangmanScores.objects.all()
+        'names': get_top_scores()
     })
