@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: lightblue;
+    height: 100vh;
 }
 
 #secret_word, #secret_score {

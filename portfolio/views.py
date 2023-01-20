@@ -6,7 +6,7 @@ from . import EMAILS
 import json
 import random
 
-score = [0]
+
 # Create your views here.
 def index(request):
     if request.method == "POST":
@@ -25,19 +25,19 @@ def index(request):
     return render(request, "portfolio/index.html")
 
 def hangman(request):
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        score_q = data['score']
-        score[0] = score_q
-        return JsonResponse({
-            "message": 'success'
-        })    
-    handle = default_storage.open("words.txt", 'r')
-    words = handle.read()
-    words = words.split(" ")
-    word = words[random.randint(0, len(words) - 1)]
+    return render(request, "portfolio/hangman.html")
 
-    return render(request, "portfolio/hangman.html", {
-        'word': word,
-        'score': score[0]
+def hangman_endpoint(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        if data['word']:
+            handle = default_storage.open("words.txt", 'r')
+            words = handle.read()
+            words = words.split(" ")
+            word = words[random.randint(0, len(words) - 1)]
+            return JsonResponse({
+                "word": word
+            })
+    return JsonResponse({
+        'hello': 'world!'
     })

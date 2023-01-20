@@ -1,12 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     var remaining_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     var wrong_guesses = 0
-    var score = +$('#secret_score').text()
-    var word_to_guess = $('#secret_word').text()
+    var score = 0
+    word_to_guess = loadDoc()['word']
     
-    
+    main()
 
-    $(document).ready(function() {
+    function loadDoc() {
+        var x
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            //console.log(this.responseText);
+            x = JSON.parse(this.responseText)
+          }
+        }
+        xhttp.open("POST", "/hangman-endpoint", false)
+        xhttp.setRequestHeader("X-CSRFToken", csrftoken)
+        xhttp.send(JSON.stringify({'word': true}))
+        return x
+    }
+       
+    function main() {
+        $(document).ready(function() {
+        $('#letters').empty()
         $('.container').hide()
         $('#play_again_btn').hide()
         $('.container_win').hide()
@@ -17,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // click on first letter
         $('.letter').click(clickOnLetter)
     })
+}
 
     function writeLetters() {
         for (var i = 0; i < remaining_letters.length; i++) {
@@ -38,10 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#letters').empty()
         writeLetters()
         drawHangman()
-        isGameOver()
+        if (isGameOver()) {
+            return 1
+        }
         writeDashedWord(dashWordToGuess(word_to_guess))
         $('.letter').click(clickOnLetter)
-        console.log(score)
     }
 
     function drawHangman() {
@@ -88,19 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#display_word').text(word_to_guess)
             $('#display_score').text(score)
             $('#play_again_btn').click(function() {
-                fetch('/hangman', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        score: 0
-                    }),
-                    headers: { "X-CSRFToken": csrftoken }
-                })
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result)
-                    location.reload()
-                    
-                })
                 location.reload()
             })
         }
@@ -111,20 +117,18 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#letters').hide()
             $('#display_score_win').text(score)
             $('#play_again_win').click(function() {
-                fetch('/hangman', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        score: score
-                    }),
-                    headers: { "X-CSRFToken": csrftoken }
-                })
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result)
-                    location.reload()
-                    
-                })
+                word_to_guess = loadDoc()['word']
+                wrong_guesses = 0
+                remaining_letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+                $('#container').show()
+                $('.container_win').hide()
+                $('#play_again_win').hide()
+                $('#letters').show()
+                //$('#display_score_win').text(score)
+                //$('#play_again_win')
+                main()
             })
         }
     }
+
 })
