@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    height: 100vh;
+}
+
+.container {
+    width: 370px;
+    border: 1px dotted navy;
+    border-radius: 10px;
+}
+
+h1 {
+    color: navy;
+}
+
+button {
+    margin-top: 10px;
+    color: aliceblue;
+    background-color: navy;
+    border-radius: 3px;
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition-duration: 0.7s;
+}
+
+a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}

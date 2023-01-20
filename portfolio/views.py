@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
 from django.core.files.storage import default_storage
 from . import EMAILS
+from .models import HangmanScores
 import json
 import random
 
@@ -40,4 +41,13 @@ def hangman_endpoint(request):
             })
     return JsonResponse({
         'hello': 'world!'
+    })
+
+def hangman_leaderboard(request):
+    names = HangmanScores.objects.all()
+    for name in names:
+        print(name)
+    print(names)
+    return render(request, "portfolio/hangman-leaderboard.html", {
+        'names': HangmanScores.objects.all()
     })
