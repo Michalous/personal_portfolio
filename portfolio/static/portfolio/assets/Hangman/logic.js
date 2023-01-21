@@ -122,6 +122,22 @@ document.addEventListener('DOMContentLoaded', function() {
                   console.log(result);
                   if (result['high-scores'] == 'yes') {
                     $('#save_name').show()
+                    $('#submit_name').click(function() {
+                        var submit_name = document.getElementById('submit_input').value
+                        fetch('/hangman-leaderboard', {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                name: submit_name,
+                                score: score
+                            }),
+                            headers: {"X-CSRFToken": csrftoken}
+                        })
+                        .then(response => response.json())
+                        .then(result => {
+                            console.log(result)
+                            window.location.replace("/hangman-leaderboard")
+                        })
+                    })
                   }
               });
 

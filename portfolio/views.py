@@ -30,7 +30,7 @@ def hangman(request):
     return render(request, "portfolio/hangman.html")
 
 def get_top_scores():
-    top_scores = HangmanScores.objects.all().order_by('-score')[:5]
+    top_scores = HangmanScores.objects.all().order_by('-score')[:10]
     return top_scores
 
 def hangman_endpoint(request):
@@ -62,6 +62,18 @@ def hangman_endpoint(request):
 
 
 def hangman_leaderboard(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        score = data['score']
+        name = data['name']
+        if len(name) > 20:
+            name = name[:20]
+        entry = HangmanScores(name=name, score=score)
+        entry.save()
+        print(name, score)
+        return JsonResponse({
+            "message": "success"
+        })
     return render(request, "portfolio/hangman-leaderboard.html", {
         'names': get_top_scores()
     })
