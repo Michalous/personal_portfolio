@@ -12,7 +12,10 @@
     <title>Hangman</title>
 </head>
 <body>
-    <h1>HANGMAN</h1>
+    <div class="title">
+        <img id="gallows" src="{% static 'portfolio/assets/Hangman/gallows.svg' %}" alt="">
+        <h1>HANGMAN</h1>
+    </div>
     <div id="container">
         <div id="score">Your score: <span id="yourScore">0</span></div>
         <canvas id="hangman" width="180" height="250"></canvas>

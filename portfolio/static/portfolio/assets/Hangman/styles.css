@@ -7,6 +7,18 @@ body {
     height: 100vh;
 }
 
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#gallows {
+    height: 40px;
+}
+
 #secret_word, #secret_score {
     display: none;
 }
