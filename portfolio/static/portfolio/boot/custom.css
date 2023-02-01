@@ -259,3 +259,14 @@ a {
 .logo_circle {
     width: 100%;
 } 
+
+.project-image {
+    transition-duration: 0.7s;
+}
+
+.project-image:hover {
+    transform: scale(0.9);
+    transition-duration: 0.7s;
+    cursor: pointer;
+    opacity: 0.8;
+}

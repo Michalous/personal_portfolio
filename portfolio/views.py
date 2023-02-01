@@ -26,6 +26,9 @@ def index(request):
 
     return render(request, "portfolio/index2.html")
 
+def data_visualization(request):
+    return HttpResponse('Nasrat')
+
 def hangman(request):
     return render(request, "portfolio/hangman.html")
 
