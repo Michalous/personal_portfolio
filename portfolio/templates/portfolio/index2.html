@@ -1,0 +1,495 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Personal portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+        <link href="{% static 'portfolio/boot/styles.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'portfolio/boot/custom.css' %}">
+        <script src="{% static 'portfolio/boot/scripts.js' %}"></script>
+    
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <!--<a class="navbar-brand" href="#page-top">Start Bootstrap</a>-->
+                <div class="navbar-brand">
+                    <a clas="logo-text" href="./index.html"><img class="logo-text" src="{% static 'portfolio/assets/index/text-1666295944204.png' %}" alt="Lightlander text"></a>
+                </div>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url({% static 'portfolio/assets/index/bg-masthead.jpg' %}); background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <div class="lightlogo">
+                            <img class="logo_circle" src="{% static 'portfolio/assets/index/logo_lightlander_white.png' %}" alt="Lightlander logo">
+                        </div>
+                        <h1 class="mx-auto my-0" style="padding: 7px;"><img src="{% static 'portfolio/assets/index/raspberry-pi.svg' %}" style="height: 100px; margin-right: 10px; margin-top: -20px;">Dev</h1>
+                        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-bottom: 45px;">
+                          <h2 id="moving_text" style="color: rgb(200, 200, 200);"></h2>
+                          <div class="blinking" id="blinking_cursor"></div>
+                          <script src="{% static 'portfolio/boot/moving-text.js' %}"></script>
+                        </div>
+                        <!-- <h2 class="text-white-50 mx-auto mt-2 mb-5">In rubus veritas</h2> -->
+                        <a class="btn btn-primary" href="#about">Take a tour</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                      <h2 class="text-white mb-4">About Me</h2>
+                        <img loading="lazy" class="img-fluid profile-picture" src="{% static 'portfolio/assets/index/avatar.png' %}" alt="Profile picture" />
+                        <p class="text-white-50">My name is Michal. I was born in North-East Czech Republic in 1981. I currently live with my wife and children in probably the most beautiful part of England - somewhere on the border between Kent and East Sussex.</p>
+                        <p class="text-white-50">I’m interested in software development and computational problem solving. I’m working hard to make a transition into tech and the purpose of this website is to help me in my endeavour.</p>
+                        <h5 class="text-white-50" style="margin-top: 50px;">SKILLS:</h5>
+                        <div class="text-white-50 skills">
+                                <div class="skill">HTML</div>
+                                <div class="skill">CSS</div>
+                                <div class="skill">JavaScript</div>
+                                <div class="skill">Node JS</div>
+                                <div class="skill">jQuery</div>
+                                <div class="skill">React</div>
+                                <div class="skill">Python</div>
+                                <div class="skill">Flask</div>
+                                <div class="skill">Django</div>
+                                <div class="skill">SQL</div>
+                                <div class="skill">Git</div>  
+                        </div>
+                        <h5 id="active_h2">site active:</h5>
+                        <div id="eq_container" class="eq_container"></div>
+                        <div class="days"><span>DAYS</span><span>HOURS</span><span>MINUTES</span></div>
+                        <script src="{% static 'portfolio/boot/equinox.js' %}"></script>
+                    </div>
+                </div>
+                <img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/banner.jpeg' %}" style="margin-bottom: -30px;" alt="Glasses with ice, gin and blackberries" />
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects" style="background-color: blue;">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static 'portfolio/assets/index/eat-blackberry.jpeg' %}" alt="Woman eating blackberry" /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Very short poem</h4>
+                            <p class="text-black-50 mb-0">Try our web development, the best web development yet, The web development that no one will ever forget.</p>
+                            <p class="text-black-50 mb-0">Taste of greatness below.</p> 
+                            <br>
+                            <p><i class="fas fa-solid fa-arrow-turn-down" style="font-size: 36px;"></i></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/luke-chesser-JKUTrJ4vK00-unsplash.jpg' %}" alt="Blackberry on a wooden spoon" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Data visualization</h4>
+                                    <p class="mb-0 text-white-50">Local hearsay has been busy about the past of our blackberries. Many believe that in the spring of 1215 King John of England ate a considerable amount of them before he made up his mind to head towards Windsor to sign Magna Carta.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/sigmund-By-tZImt0Ms-unsplash.jpg' %}" alt="Glass of blackberry gin" /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Games</h4>
+                                    <p class="mb-0 text-white-50">Today is <span id="day"></span> sometime in <span id="month"></span>. It is a great day to have one or maybe two glasses of our delicious drink. So don't be shy and have some!</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Three Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                  <div class="col-lg-6"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/noaa-5YryiYcFvtA-unsplash.jpg' %}" alt="Blackberry on a wooden spoon" /></div>
+                  <div class="col-lg-6">
+                      <div class="bg-black text-center h-100 project">
+                          <div class="d-flex h-100">
+                              <div class="project-text w-100 my-auto text-center text-lg-left">
+                                  <h4 class="text-white">Weather dashboard</h4>
+                                  <p class="mb-0 text-white-50">Local hearsay has been busy about the past of our blackberries. Many believe that in the spring of 1215 King John of England ate a considerable amount of them before he made up his mind to head towards Windsor to sign Magna Carta.</p>
+                                  <hr class="d-none d-lg-block mb-0 ms-0" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Project Four Row-->
+              <div class="row gx-0 justify-content-center">
+                  <div class="col-lg-6"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/demo-image-02.jpg' %}" alt="Glass of blackberry gin" /></div>
+                  <div class="col-lg-6 order-lg-first">
+                      <div class="bg-black text-center h-100 project">
+                          <div class="d-flex h-100">
+                              <div class="project-text w-100 my-auto text-center text-lg-right">
+                                  <h4 class="text-white">Product website</h4>
+                                  <p class="mb-0 text-white-50">Today is <span id="day"></span> sometime in <span id="month"></span>. It is a great day to have one or maybe two glasses of our delicious drink. So don't be shy and have some!</p>
+                                  <hr class="d-none d-lg-block mb-0 me-0" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        <script>
+            var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            var monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+            var newDate = new Date()
+            var dayOfWeek = newDate.getDay()
+            var monthOfYear = newDate.getMonth()
+            document.getElementById('day').innerHTML = daysOfWeek[dayOfWeek]
+            document.getElementById('month').innerHTML = monthsOfYear[monthOfYear]
+        </script>
+
+
+        <!-- Testimonial carousel-->
+        <section class="bg-light" style="margin-top: -50px;">
+            <h1 style="text-align: center;">Customer Testimonials</h1>
+        <div class="container" style="background-color: #f8f9fa">
+            <div class="row mt-5 justify-content-center">
+              <div class="col-lg-6 col-md-8 col-sm-12 px-4">
+                <div class="row">
+                  <div class="col-sm-4 border-kiri" style="background-color: rgb(30, 30, 30);">
+                    <div class="swiper">
+                      <!-- Additional required wrapper -->
+          
+                      <div class="swiper-wrapper text-white text-center">
+                        <!-- Slides -->
+                        <div class="swiper-slide pt-3">
+                          <div class="row">
+                            <div class="panel img-kiri-satu" style="height: 100px; width: 100px; border-radius: 50%; background-image: url({% static 'portfolio/assets/index/churchill.jpeg' %});"></div>
+          
+                          </div>
+                          <div class="row pt-2">
+                            <h5>Winston</h5>
+                            <p>from England</p>
+                          </div>
+                          
+                          <div class="row d-flex m-auto" style="width: 80%;">
+                            <div class="col d-flex justify-content-around">
+                              <a href="#">
+                                <h5><i class='bx bxl-meta'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-instagram'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-twitter'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-tiktok'></i></h5>
+                              </a>
+                            </div>
+                          </div>
+                        
+                        </div>
+                        <div class="swiper-slide pt-3">
+                          <div class="row">
+                            <div class="panel img-kiri-dua" style="height: 100px; width: 100px; border-radius: 50%; background-image: url({% static 'portfolio/assets/index/teresa.jpeg' %});"></div>
+          
+                          </div>
+                          <div class="row pt-2">
+                            <h5>Teresa</h5>
+                            <p>from India</p>
+                          </div>
+                          <div class="row d-flex m-auto" style="width: 80%;">
+                            <div class="col d-flex justify-content-around">
+                              <a href="#">
+                                <h5><i class='bx bxl-meta'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-instagram'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-twitter'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-tiktok'></i></h5>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide pt-3">
+                          <div class="row">
+                            <div class="panel img-kiri-tiga" style="height: 100px; width: 100px; border-radius: 50%; background-image: url({% static 'portfolio/assets/index/thomas.jpeg' %});"></div>
+          
+                          </div>
+                          <div class="row pt-2">
+                            <h5>Thomas</h5>
+                            <p><i>from Kent</i></p>
+                          </div>
+                          <div class="row d-flex m-auto" style="width: 80%;">
+                            <div class="col d-flex justify-content-around">
+                              <a href="#">
+                                <h5><i class='bx bxl-meta'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-instagram'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-twitter'></i></h5>
+                              </a>
+                              <a href="#">
+                                <h5><i class='bx bxl-tiktok'></i></h5>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          
+                    </div>
+                  </div>
+                  <div class="col-sm-8 border-kanan" style="background-color: rgb(200, 200, 200);">
+                    <div class="row pt-4 px-3 float-end">
+                      <div class="col d-flex">
+                        <h5><i class='bx bxs-chevron-left bx-border-circle bx-fade-left-hover kiri'></i></h5>
+          
+                        <h5 class="ms-2"><i class='bx bxs-chevron-right bx-border-circle bx-fade-right-hover kanan'></i></h5>
+                      </div>
+                    </div>
+                    <div class="swiper">
+          
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                          <div class="row pt-3">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10 px-3">
+                              <figure>
+                                <blockquote class="blockquote">
+                                  <h1 class="text-secondary"><i class='bx-pull-left bx bxs-quote-left'></i></h1>
+                                  <p>Michal's attitude is a little thing that makes a big difference!</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                  Winston Churchill <cite title="Source Title">UK Prime minister</cite>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="col-sm-1"></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="row pt-3">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10 px-3">
+                              <figure>
+                                <blockquote class="blockquote">
+                                  <h1 class="text-secondary"><i class='bx-pull-left bx bxs-quote-left'></i></h1>
+                                  <p>Not all of us can do great things like Michal...</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                  Mother Teresa <cite title="Source Title">Catholic nun</cite>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="col-sm-1"></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="row pt-3">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-10 px-3">
+                              <figure>
+                                <blockquote class="blockquote">
+                                  <h1 class="text-secondary"><i class='bx-pull-left bx bxs-quote-left'></i></h1>
+                                  <p>Hire that geezer already. You won't regret it!</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                  Thomas Bayes <cite title="Source Title">Statistician</cite>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div class="col-sm-1"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          </section>
+           
+        
+        <!-- Calendar -->
+        <section class="bg-light">
+          <br>
+          <div class="container px-4 px-lg-5">
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+              <div class="col-lg-6"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/calendar.jpeg' %}" alt="Lightlander calendar" /></div>
+              <div class="col-lg-6">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
+                              <br>
+                              <h4 class="text-white">2023 Calendar</h4>
+                              <br>
+                              <p class="mb-0 text-white-50">Check out our hand made calendar.</p>
+                              <br>
+                              <button type="button" onclick="location.href = './calendar.html';" class="btn btn-outline-primary">Click here</button>
+                              <br>
+                              <hr class="d-none d-lg-block mb-0 ms-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+          <br>
+          <br>
+        </section>
+        
+        
+        <!-- Signup-->
+        <section class="signup-section" id="signup" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url({% static 'portfolio/assets/index/bg-signup.jpg' %});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center" id="formWrap">
+                        
+                      <h2>Contact Me!</h2>
+                      <form class="myForm" action="./" method="post">
+                          {% csrf_token %}
+                          <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text" style="color: aliceblue;">We'll never share your email with anyone else.</div>
+                          </div>
+                          <div>
+                              <textarea name="query" id="textarea" placeholder="Your query:"></textarea>
+                            <!-- <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"> -->
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check to receive updates</label>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">Somewhere in Sussex, England</div>
+                                <div class="small text-black-50">(Stone's throw from London)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">chronosonuk@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">07703856460</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50">
+          <img src="{% static 'portfolio/assets/index/logo_lightlander_white.png' %}" alt="Lightlander logo" style="height: 280px;">
+          <div class="container px-4 px-lg-5">Copyright &copy; Michal Skalsky 2023</div>
+          <div class="container px-4 px-lg-5">The best of Sussex</div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <!-- <script src="./script.js"></script> -->
+        
+    </body>
+</html>

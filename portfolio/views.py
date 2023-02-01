@@ -22,9 +22,9 @@ def index(request):
                  fail_silently=False
              )
         message = "We've received your message and will reply as soon as we can."
-        return render(request, "portfolio/index.html", {"message" : message})
+        return render(request, "portfolio/index2.html", {"message" : message})
 
-    return render(request, "portfolio/index.html")
+    return render(request, "portfolio/index2.html")
 
 def hangman(request):
     return render(request, "portfolio/hangman.html")
