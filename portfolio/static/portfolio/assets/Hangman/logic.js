@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $(document).ready(function() {
         $('#letters').empty()
         $('#save_name').hide()
-        $('.container').hide()
+        $('.container-hanged').hide()
         $('#play_again_btn').hide()
         $('.container_win').hide()
         $('#play_again_win').hide()
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function isGameOver() {
         if (wrong_guesses >= 8) {
             $('#container').hide()
-            $('.container').show()
+            $('.container-hanged').show()
             $('#play_again_btn').show()
             $('#letters').hide()
             $('#display_word').text(word_to_guess)

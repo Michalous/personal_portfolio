@@ -1,10 +1,15 @@
 body {
+    background-color: lightblue !important;
+}
+
+.hangman-container {
+    max-width: 380px;
+    margin: 100px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: lightblue;
-    height: 100vh;
 }
 
 .title {
@@ -93,7 +98,7 @@ body {
     color: navy;
 }
 
-.container, .container_win {
+.container-hanged, .container_win {
     width: 220px;
     height: 420px;
     border: 1px dotted navy;

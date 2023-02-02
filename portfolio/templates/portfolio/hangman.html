@@ -1,17 +1,29 @@
+{% extends 'portfolio/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'portfolio/assets/Hangman/styles.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{% static 'portfolio/assets/Hangman/logic.js' %}"></script>
 
-    <title>Hangman</title>
-</head>
-<body>
+{% block title %}Hangman{% endblock %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'portfolio/assets/Hangman/styles.css' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{% static 'portfolio/assets/Hangman/logic.js' %}"></script>
+<link href="{% static 'portfolio/boot/styles.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'portfolio/boot/custom.css' %}">
+{% endblock %}
+
+{% block navbar %}
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'hangman-leaderboard' %}" style="color: black">Leaderboard</a></li>
+      </ul>
+    </div>
+    {% endblock %}
+
+{% block main %}
+  <div class="hangman-container">  
     <div class="title">
         <img id="gallows" src="{% static 'portfolio/assets/Hangman/gallows.svg' %}" alt="">
         <h1>HANGMAN</h1>
@@ -22,7 +34,7 @@
         <div id="success"></div>
     </div>
 
-    <div class="container">
+    <div class="container-hanged">
         <h1>You've been hanged!</h1>
         <br>
         <h2>Your score: <span id="display_score"></span></h2>
@@ -50,8 +62,10 @@
     <div id="dashedWord"></div>
     <script src="{% static 'portfolio/assets/Hangman/script.js' %}"></script>
     <div id="letters"></div>
-    <script>
-        var csrftoken = '{{ csrf_token }}';
-    </script>
+ </div>
+<script>
+    var csrftoken = '{{ csrf_token }}';
+</script>
 </body>
 </html>
+{% endblock %}

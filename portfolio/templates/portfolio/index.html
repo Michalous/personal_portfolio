@@ -112,7 +112,7 @@
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-left">
                                     <h4 class="text-white">Data visualization</h4>
-                                    <p class="mb-0 text-white-50">Local hearsay has been busy about the past of our blackberries. Many believe that in the spring of 1215 King John of England ate a considerable amount of them before he made up his mind to head towards Windsor to sign Magna Carta.</p>
+                                    <p class="mb-0 text-white-50">Here you will find a selection of my miniprojects that deal with data visualization and solving mathematical problems.</p>
                                     <hr class="d-none d-lg-block mb-0 ms-0" />
                                 </div>
                             </div>
@@ -121,13 +121,13 @@
                 </div>
                 <!-- Project Two Row-->
                 <div class="row gx-0 justify-content-center">
-                    <div class="col-lg-6 project-image"><a href="https://google.com"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/sigmund-By-tZImt0Ms-unsplash.jpg' %}" alt="Glass of blackberry gin" /></a></div>
+                    <div class="col-lg-6 project-image"><a href="{% url 'games' %}"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/sigmund-By-tZImt0Ms-unsplash.jpg' %}" alt="Glass of blackberry gin" /></a></div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
                                     <h4 class="text-white">Games</h4>
-                                    <p class="mb-0 text-white-50">Today is <span id="day"></span> sometime in <span id="month"></span>. It is a great day to have one or maybe two glasses of our delicious drink. So don't be shy and have some!</p>
+                                    <p class="mb-0 text-white-50">Some of the games I created recently from scratch to improve my skills in JavaScript and Python.</p>
                                     <hr class="d-none d-lg-block mb-0 me-0" />
                                 </div>
                             </div>
@@ -136,13 +136,13 @@
                 </div>
                 <!-- Project Three Row-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                  <div class="col-lg-6 project-image"><a href="https://google.com"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/noaa-5YryiYcFvtA-unsplash.jpg' %}" alt="Blackberry on a wooden spoon" /></a></div>
+                  <div class="col-lg-6 project-image"><a href="https://michalous.github.io/weather-dashboard/"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/noaa-5YryiYcFvtA-unsplash.jpg' %}" alt="Blackberry on a wooden spoon" /></a></div>
                   <div class="col-lg-6">
                       <div class="bg-black text-center h-100 project">
                           <div class="d-flex h-100">
                               <div class="project-text w-100 my-auto text-center text-lg-left">
                                   <h4 class="text-white">Weather dashboard</h4>
-                                  <p class="mb-0 text-white-50">Local hearsay has been busy about the past of our blackberries. Many believe that in the spring of 1215 King John of England ate a considerable amount of them before he made up his mind to head towards Windsor to sign Magna Carta.</p>
+                                  <p class="mb-0 text-white-50">This project was one of the challenges in the bootcamp I took recently. The goal of this challenge was to make several API calls to retrieve weather data and store the history of searches in localStorage.</p>
                                   <hr class="d-none d-lg-block mb-0 ms-0" />
                               </div>
                           </div>
@@ -151,13 +151,13 @@
               </div>
               <!-- Project Four Row-->
               <div class="row gx-0 justify-content-center">
-                  <div class="col-lg-6 project-image"><a href="https://google.com"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/demo-image-02.jpg' %}" alt="Glass of blackberry gin" /></a></div>
+                  <div class="col-lg-6 project-image"><a href="https://michalous.github.io/lightlander-website"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/index/demo-image-02.jpg' %}" alt="Glass of blackberry gin" /></a></div>
                   <div class="col-lg-6 order-lg-first">
                       <div class="bg-black text-center h-100 project">
                           <div class="d-flex h-100">
                               <div class="project-text w-100 my-auto text-center text-lg-right">
                                   <h4 class="text-white">Product website</h4>
-                                  <p class="mb-0 text-white-50">Today is <span id="day"></span> sometime in <span id="month"></span>. It is a great day to have one or maybe two glasses of our delicious drink. So don't be shy and have some!</p>
+                                  <p class="mb-0 text-white-50">Bootstrap website for a fictitious product.</p>
                                   <hr class="d-none d-lg-block mb-0 me-0" />
                               </div>
                           </div>
@@ -167,21 +167,6 @@
             </div>
         </section>
         
-        
-        
-        
-        
-        <script>
-            var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-            var monthsOfYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-            var newDate = new Date()
-            var dayOfWeek = newDate.getDay()
-            var monthOfYear = newDate.getMonth()
-            document.getElementById('day').innerHTML = daysOfWeek[dayOfWeek]
-            document.getElementById('month').innerHTML = monthsOfYear[monthOfYear]
-        </script>
-
-
         <!-- Testimonial carousel-->
         <section class="bg-light" style="margin-top: -50px;">
             <h1 style="text-align: center;">Customer Testimonials</h1>

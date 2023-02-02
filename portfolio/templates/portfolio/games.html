@@ -1,0 +1,78 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+
+{% block title %}Games{% endblock %}
+
+{% block links %}
+<link href="{% static 'portfolio/boot/styles.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'portfolio/boot/custom.css' %}">
+{% endblock %}
+
+
+{% block main %}
+
+    <section class="projects-section bg-light" id="projects">
+        <div class="container px-4 px-lg-5">
+            <!-- Project One Row-->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div class="col-lg-6 project-image"><a href="{% url 'hangman' %}"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/hangman.jpeg' %}" alt="Blackberry on a wooden spoon" /></a></div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Hangman</h4>
+                                <p class="mb-0 text-white-50">This mini project takes a full advantage of a Django framework. It makes a get API calls to Django view to obtain a word to be guessed and then a post request to check wether player's score is in top 10. If so it is then saved in SQLite database.</p>
+                                <hr class="d-none d-lg-block mb-0 ms-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Two Row-->
+            <div class="row gx-0 justify-content-center">
+                <div class="col-lg-6 project-image"><a href="https://michalous.github.io/mastermind/"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/mastermind.jpeg' %}" alt="Glass of blackberry gin" /></a></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Mastermind</h4>
+                                <p class="mb-0 text-white-50">Donald Knuth showed that this game can be won in five moves or fewer. While this game doesn't have Donald's algorithm incorporated in it, you can still play against the computer and see if you are able to solve the pattern.</p>
+                                <hr class="d-none d-lg-block mb-0 me-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Three Row-->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+              <div class="col-lg-6 project-image"><a href="https://michalous.github.io/lightlander-website/snake.html"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/snake.jpeg' %}" alt="Blackberry on a wooden spoon" /></a></div>
+              <div class="col-lg-6">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
+                              <h4 class="text-white">Snake</h4>
+                              <p class="mb-0 text-white-50">My attempt to build an old classic game from Nokia 3310.</p>
+                              <hr class="d-none d-lg-block mb-0 ms-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Project Four Row-->
+          <div class="row gx-0 justify-content-center">
+              <div class="col-lg-6 project-image"><a href="https://michalous.github.io/js-quiz/"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/js-quiz.jpeg' %}" alt="Glass of blackberry gin" /></a></div>
+              <div class="col-lg-6 order-lg-first">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-right">
+                              <h4 class="text-white">JavaScript Quiz</h4>
+                              <p class="mb-0 text-white-50">This was one of the challenges in my bootcamp. Although it is not really a game you will get a score at the end. The score is saved locally in your browser in localStorage.</p>
+                              <hr class="d-none d-lg-block mb-0 me-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </section>
+{% endblock %}

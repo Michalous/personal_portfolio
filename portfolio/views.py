@@ -29,6 +29,9 @@ def index(request):
 def data_visualization(request):
     return render(request, "portfolio/data-visualization.html")
 
+def games(request):
+    return render(request, "portfolio/games.html")
+
 def hangman(request):
     return render(request, "portfolio/hangman.html")
 
