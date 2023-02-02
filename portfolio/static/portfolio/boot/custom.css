@@ -150,6 +150,27 @@ p {
     color: rgb(200, 200, 200);
 }
 
+
+@media only screen and (max-width: 415px) {
+    .eq_container {
+        width: 290px;   
+    }
+
+    .square {
+        width: 7px;
+        height: 7px;
+        border: 1px solid rgb(100, 100, 100);
+    }
+
+    .days {
+        width: 290px;
+    }
+
+    .days span {
+        font-size: 10px;
+    }
+}
+
 /*Carousel*/
 a {
     color: white;
