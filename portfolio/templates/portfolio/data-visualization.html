@@ -1,0 +1,79 @@
+{% extends 'portfolio/layout.html' %}
+{% load static %}
+
+{% block title %}Data visualization{% endblock %}
+
+{% block links %}
+<link href="{% static 'portfolio/boot/styles.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'portfolio/boot/custom.css' %}">
+{% endblock %}
+
+
+{% block main %}
+
+    <section class="projects-section bg-light" id="projects">
+        <div class="container px-4 px-lg-5">
+            <!-- Project One Row-->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                <div class="col-lg-6 project-image"><a href="https://michalous.github.io/math-random/"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/random.png' %}" alt="Blackberry on a wooden spoon" /></a></div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Playing with Math.random()</h4>
+                                <p class="mb-0 text-white-50">t's very satisfying to watch computer compute stuff. Here are four little projects built with Math.random(). They are Monte Carlo integration, probabilities of rolling 2 dice, the birthday problem and shuffling the deck of cards.</p>
+                                <hr class="d-none d-lg-block mb-0 ms-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Two Row-->
+            <div class="row gx-0 justify-content-center">
+                <div class="col-lg-6 project-image"><a href="https://michalous.github.io/covid-graph/"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/covid-graph.jpeg' %}" alt="Glass of blackberry gin" /></a></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Covid cases graph</h4>
+                                <p class="mb-0 text-white-50">This project pulls the data from the UK Government website and displays it as a bar chart using Plotly JS. To smooth out the spikes in the data I've calculated 7 day averages and displayed them alongside the actual data.</p>
+                                <hr class="d-none d-lg-block mb-0 me-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Three Row-->
+            <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+              <div class="col-lg-6 project-image"><a href="https://michalous.github.io/bubble-sort/"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/bubble-sort.png' %}" alt="Blackberry on a wooden spoon" /></a></div>
+              <div class="col-lg-6">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-left">
+                              <h4 class="text-white">Bubble sort visualization</h4>
+                              <p class="mb-0 text-white-50">I first saw this visualization in one of the online CS lessons and decided to give it a try and build one for myself. It is a simplified animation only showing changes in order of elements omitting iterations where no swap is made.</p>
+                              <hr class="d-none d-lg-block mb-0 ms-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Project Four Row-->
+          <div class="row gx-0 justify-content-center">
+              <div class="col-lg-6 project-image"><a href="https://michalous.github.io/equinox-countdown/"><img loading="lazy" class="img-fluid" src="{% static 'portfolio/assets/countdown.jpeg' %}" alt="Glass of blackberry gin" /></a></div>
+              <div class="col-lg-6 order-lg-first">
+                  <div class="bg-black text-center h-100 project">
+                      <div class="d-flex h-100">
+                          <div class="project-text w-100 my-auto text-center text-lg-right">
+                              <h4 class="text-white">Equinox countdown</h4>
+                              <p class="mb-0 text-white-50">Nice little project to show a countdown until next equinox. The biggest challenge here for me was to figure out how to display digits in the grid.
+                            </p>
+                              <hr class="d-none d-lg-block mb-0 me-0" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </section>
+{% endblock %}

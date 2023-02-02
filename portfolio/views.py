@@ -22,12 +22,12 @@ def index(request):
                  fail_silently=False
              )
         message = "We've received your message and will reply as soon as we can."
-        return render(request, "portfolio/index2.html", {"message" : message})
+        return render(request, "portfolio/index.html", {"message" : message})
 
-    return render(request, "portfolio/index2.html")
+    return render(request, "portfolio/index.html")
 
 def data_visualization(request):
-    return HttpResponse('Nasrat')
+    return render(request, "portfolio/data-visualization.html")
 
 def hangman(request):
     return render(request, "portfolio/hangman.html")

@@ -19,7 +19,7 @@
             <div class="container px-4 px-lg-5">
                 <!--<a class="navbar-brand" href="#page-top">Start Bootstrap</a>-->
                 <div class="navbar-brand">
-                    <a clas="logo-text" href="./index.html"><img class="logo-text" src="{% static 'portfolio/assets/index/text-1666295944204.png' %}" alt="Lightlander text"></a>
+                    <a clas="logo-text" href="{% url 'index' %}"><img class="logo-text" src="{% static 'portfolio/assets/index/text-1666295944204.png' %}" alt="Lightlander text"></a>
                 </div>
                 {% block navbar %}{% endblock %}
             </div>
