@@ -4,7 +4,7 @@ body {
 
 .hangman-container {
     max-width: 380px;
-    margin: 100px auto;
+    margin: 120px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;

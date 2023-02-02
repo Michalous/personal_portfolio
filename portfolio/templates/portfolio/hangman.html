@@ -3,6 +3,9 @@
 
 {% block title %}Hangman{% endblock %}
 {% block links %}
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="{% static 'portfolio/assets/Hangman/styles.css' %}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{% static 'portfolio/assets/Hangman/logic.js' %}"></script>
@@ -11,7 +14,7 @@
 {% endblock %}
 
 {% block navbar %}
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <button style="padding: 0; width: 70px;" class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu
       <i class="fas fa-bars"></i>
     </button>
