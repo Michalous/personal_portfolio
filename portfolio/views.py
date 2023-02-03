@@ -12,8 +12,9 @@ import random
 # Create your views here.
 def index(request):
     if request.method == "POST":
-        email = request.POST['email']
-        query = request.POST['query']
+        data = json.loads(request.body)
+        email = data['email']
+        query = data['query']
         send_mail(
                  'New customer your majesty',
                  f'Email: {email}\nMessage: {query}',
@@ -21,8 +22,9 @@ def index(request):
                  [EMAILS.EMAIL_TO],
                  fail_silently=False
              )
-        message = "We've received your message and will reply as soon as we can."
-        return render(request, "portfolio/index.html", {"message" : message})
+        return JsonResponse({
+        'message': 'success'
+    })
 
     return render(request, "portfolio/index.html")
 

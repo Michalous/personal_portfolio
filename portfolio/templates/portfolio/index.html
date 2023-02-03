@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 <link href="{% static 'portfolio/boot/styles.css' %}" rel="stylesheet" />
 <link rel="stylesheet" href="{% static 'portfolio/boot/custom.css' %}">
+<script src="{% static 'portfolio/boot/formSubmit.js' %}"></script>
 {% endblock %}
 
     {% block navbar %}
@@ -383,11 +384,11 @@
                     <div class="col-md-10 col-lg-8 mx-auto text-center" id="formWrap">
                         
                       <h2>Contact Me!</h2>
-                      <form class="myForm" action="./" method="post">
+                      <form class="myForm">
                           {% csrf_token %}
                           <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input name="email" type="email" class="form-control" id="formEmail" aria-describedby="emailHelp">
                             <div id="emailHelp" class="form-text" style="color: aliceblue;">We'll never share your email with anyone else.</div>
                           </div>
                           <div>
@@ -400,6 +401,7 @@
                             <label class="form-check-label" for="exampleCheck1">Check to receive updates</label>
                           </div>
                           <button id="contactForm_submit_button" type="submit" class="btn btn-primary">Submit</button>
+                          <script>var csrftoken = '{{ csrf_token }}'</script>
                           <br>
                         </form>
                     </div>
