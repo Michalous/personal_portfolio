@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.core.files.storage import default_storage
 #from django.db.models import Max
 from . import EMAILS
+from .cities import cities
 from .models import HangmanScores
 import json
 import random
@@ -30,6 +31,12 @@ def index(request):
 
 def data_visualization(request):
     return render(request, "portfolio/data-visualization.html")
+
+def random_entry(request):
+    x = random.randint(0, len(cities) - 1)
+    return JsonResponse({
+        'data': cities[x]
+    })
 
 def games(request):
     return render(request, "portfolio/games.html")

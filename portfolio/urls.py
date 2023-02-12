@@ -7,5 +7,6 @@ urlpatterns = [
     path("games", views.games, name="games"),
     path("hangman", views.hangman, name="hangman"),
     path("hangman-endpoint", views.hangman_endpoint, name="hangman-endpoint"),
-    path("hangman-leaderboard", views.hangman_leaderboard, name="hangman-leaderboard")
+    path("hangman-leaderboard", views.hangman_leaderboard, name="hangman-leaderboard"),
+    path("random-entry", views.random_entry, name="random-entry")
 ]
